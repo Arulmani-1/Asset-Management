@@ -222,10 +222,11 @@ a {
 }
 
 .btn-glass:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--white);
+    background: #0d6efd;
+    color: var(--white) !important;
+    border-color: #0d6efd;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
 }
 
 /* Background Effects */
