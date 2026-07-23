@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | STACKLY</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="admin-dashboard.html" class="d-flex align-items-center text-decoration-none w-100 justify-content-center">
+                    <img src="assets/images/logo.webp" alt="Company Logo" style="height: 55px; width: auto; max-width: 100%;">
+                </a>
+            </div>
+            
+            <div class="sidebar-nav-heading mt-3">ASSET MANAGEMENT</div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#" class="sidebar-link active" data-target="tab-dashboard">
+                        <i class="fa-solid fa-table-cells-large"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link" data-target="tab-all-assets">
+                        <i class="fa-solid fa-boxes-stacked"></i> All Assets
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link" data-target="tab-assign-asset">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i> Assign Asset
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link" data-target="tab-users">
+                        <i class="fa-solid fa-users"></i> Users
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-nav-heading">SYSTEM</div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#" class="sidebar-link" data-target="tab-audit-logs">
+                        <i class="fa-solid fa-clipboard-list"></i> Audit Logs
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link" data-target="tab-settings">
+                        <i class="fa-solid fa-gear"></i> Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Topbar -->
+            <header class="dashboard-topbar">
+                <div class="d-flex align-items-center">
+                    <button class="menu-toggle me-3" id="menuToggle">
+                        <i class="fa-solid fa-bars text-dark"></i>
+                    </button>
+                    <h5 id="welcomeNav" class="mb-0 fw-bold d-none d-md-block text-dark">Welcome back, Admin</h5>
+                </div>
+                
+                <div class="d-flex align-items-center gap-4">
+                    <span id="navbarUserEmail" class="text-dark fw-bold" style="font-size: 0.95rem;">demo@gmail.com</span>
+                    <a href="index.html" onclick="localStorage.removeItem('userEmail');" class="text-danger fs-5 text-decoration-none" title="Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Area (Tabs) -->
+            <div class="container-fluid p-4 p-md-5">
+                
+                <!-- Tab: Dashboard -->
+                <div id="tab-dashboard" class="dashboard-tab active">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h3 id="welcomeHeader" class="fw-bold mb-0 text-dark">Welcome back, Admin!</h3>
+                        <button class="btn btn-primary d-flex align-items-center gap-2 px-4 shadow-sm" style="border-radius: 8px;" onclick="window.location.href='dashboard-404.html'">
+                            <i class="fa-solid fa-file-export"></i> Generate Asset Report
+                        </button>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="dash-card">
+                                <div class="card-icon-box bg-light-purple">
+                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                </div>
+                                <div>
+                                    <p class="text-muted mb-1 small fw-semibold">Total Assets</p>
+                                    <h4 class="mb-0 fw-bold text-dark">1,248</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="dash-card">
+                                <div class="card-icon-box bg-light-success">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                <div>
+                                    <p class="text-muted mb-1 small fw-semibold">Assigned Assets</p>
+                                    <h4 class="mb-0 fw-bold text-dark">980</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="dash-card">
+                                <div class="card-icon-box bg-light-primary">
+                                    <i class="fa-solid fa-box-open"></i>
+                                </div>
+                                <div>
+                                    <p class="text-muted mb-1 small fw-semibold">Available in Stock</p>
+                                    <h4 class="mb-0 fw-bold text-dark">250</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="dash-card">
+                                <div class="card-icon-box bg-light-warning">
+                                    <i class="fa-solid fa-wrench"></i>
+                                </div>
+                                <div>
+                                    <p class="text-muted mb-1 small fw-semibold">In Maintenance</p>
+                                    <h4 class="mb-0 fw-bold text-dark">18</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Table -->
+                    <div class="dash-table-card">
+                        <div class="dash-table-header">
+                            <h5 class="mb-0 fw-bold text-dark">Recent Asset Activity</h5>
+                            <button class="btn btn-sm btn-outline-secondary px-3" onclick="window.location.href='dashboard-404.html'">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Log ID</th>
+                                        <th>Action Description</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">#LOG-512</td>
+                                        <td>Asset #AST-4190 assigned to Jane Doe</td>
+                                        <td>Oct 12, 2026, 14:30 PM</td>
+                                        <td><span class="status-badge status-delivered">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#LOG-511</td>
+                                        <td>Asset #AST-1002 sent for repairs</td>
+                                        <td>Oct 12, 2026, 11:15 AM</td>
+                                        <td><span class="status-badge status-pending">In Progress</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#LOG-510</td>
+                                        <td>New stock of 50 monitors added</td>
+                                        <td>Oct 11, 2026, 09:00 AM</td>
+                                        <td><span class="status-badge status-delivered">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: All Assets -->
+                <div id="tab-all-assets" class="dashboard-tab">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h3 class="fw-bold mb-0 text-dark">All Assets Inventory</h3>
+                        <button class="btn btn-success d-flex align-items-center gap-2 px-4 shadow-sm" style="border-radius: 8px;" onclick="window.location.href='dashboard-404.html'">
+                            <i class="fa-solid fa-plus"></i> Add New Asset
+                        </button>
+                    </div>
+                    <div class="dash-table-card">
+                        <div class="dash-table-header">
+                            <h5 class="mb-0 fw-bold text-dark">Asset Directory</h5>
+                            <input type="text" class="form-control form-control-sm w-auto" placeholder="Search assets..." onkeyup="filterTable(this)">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Asset Tag</th>
+                                        <th>Category</th>
+                                        <th>Device Name</th>
+                                        <th>Assigned To</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">#AST-1045</td>
+                                        <td>Laptop</td>
+                                        <td>Dell XPS 15</td>
+                                        <td>John Doe</td>
+                                        <td><span class="status-badge status-in-transit">Assigned</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#AST-4190</td>
+                                        <td>Tablet</td>
+                                        <td>Apple iPad Pro</td>
+                                        <td>Jane Doe</td>
+                                        <td><span class="status-badge status-in-transit">Assigned</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#AST-5001</td>
+                                        <td>Laptop</td>
+                                        <td>MacBook Pro 14"</td>
+                                        <td>-</td>
+                                        <td><span class="status-badge status-delivered">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#AST-1002</td>
+                                        <td>Desktop</td>
+                                        <td>HP Workstation</td>
+                                        <td>-</td>
+                                        <td><span class="status-badge status-pending">Maintenance</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Assign Asset -->
+                <div id="tab-assign-asset" class="dashboard-tab">
+                    <h3 class="fw-bold mb-4 text-dark">Assign Asset to User</h3>
+                    <div class="dash-card" style="max-width: 600px;">
+                        <form style="width: 100%;">
+                            <div class="mb-3">
+                                <label class="form-label text-dark fw-semibold">Select User</label>
+                                <select class="form-select">
+                                    <option>Select Employee...</option>
+                                    <option>John Doe (Engineering)</option>
+                                    <option>Jane Doe (Design)</option>
+                                    <option>Mike Smith (Marketing)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-dark fw-semibold">Select Available Asset</label>
+                                <select class="form-select">
+                                    <option>Select Asset...</option>
+                                    <option>#AST-5001 - MacBook Pro 14"</option>
+                                    <option>#AST-5002 - Dell Monitor 27"</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-dark fw-semibold">Assignment Notes</label>
+                                <textarea class="form-control" rows="3" placeholder="Add any condition remarks before handover"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" onclick="window.location.href='dashboard-404.html'">Confirm Assignment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tab: Users -->
+                <div id="tab-users" class="dashboard-tab">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h3 class="fw-bold mb-0 text-dark">User Management</h3>
+                        <button class="btn btn-primary d-flex align-items-center gap-2 px-4 shadow-sm" style="border-radius: 8px;" onclick="window.location.href='dashboard-404.html'">
+                            <i class="fa-solid fa-user-plus"></i> Add User
+                        </button>
+                    </div>
+                    <div class="dash-table-card">
+                        <div class="dash-table-header">
+                            <h5 class="mb-0 fw-bold text-dark">Registered Users</h5>
+                            <input type="text" class="form-control form-control-sm w-auto" placeholder="Search users..." onkeyup="filterTable(this)">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Join Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">John Doe</td>
+                                        <td>john.doe@example.com</td>
+                                        <td>User</td>
+                                        <td>Jan 15, 2026</td>
+                                        <td><span class="status-badge status-delivered">Active</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary" onclick="window.location.href='dashboard-404.html'">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Jane Smith</td>
+                                        <td>jane.smith@example.com</td>
+                                        <td>Manager</td>
+                                        <td>Feb 10, 2026</td>
+                                        <td><span class="status-badge status-delivered">Active</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary" onclick="window.location.href='dashboard-404.html'">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Robert Brown</td>
+                                        <td>robert.b@example.com</td>
+                                        <td>User</td>
+                                        <td>Mar 05, 2026</td>
+                                        <td><span class="status-badge status-pending">Suspended</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary" onclick="window.location.href='dashboard-404.html'">Edit</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Audit Logs -->
+                <div id="tab-audit-logs" class="dashboard-tab">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h3 class="fw-bold mb-0 text-dark">System Audit Logs</h3>
+                        <button class="btn btn-outline-secondary d-flex align-items-center gap-2 px-4 shadow-sm" style="border-radius: 8px;" onclick="window.location.href='dashboard-404.html'">
+                            <i class="fa-solid fa-download"></i> Export Logs
+                        </button>
+                    </div>
+                    <div class="dash-table-card">
+                        <div class="dash-table-header">
+                            <h5 class="mb-0 fw-bold text-dark">Recent Activities</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Log ID</th>
+                                        <th>Action</th>
+                                        <th>Performed By</th>
+                                        <th>Date & Time</th>
+                                        <th>IP Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">#AL-9021</td>
+                                        <td>User 'john.doe' logged in</td>
+                                        <td>System</td>
+                                        <td>Oct 20, 2026, 09:15 AM</td>
+                                        <td>192.168.1.45</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#AL-9020</td>
+                                        <td>Admin changed tax rate to 15%</td>
+                                        <td>Super Admin</td>
+                                        <td>Oct 19, 2026, 14:30 PM</td>
+                                        <td>10.0.0.12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">#AL-9019</td>
+                                        <td>Failed login attempt (3 times)</td>
+                                        <td>System</td>
+                                        <td>Oct 19, 2026, 11:05 AM</td>
+                                        <td>45.22.19.102</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Settings -->
+                <div id="tab-settings" class="dashboard-tab">
+                    <h3 class="fw-bold mb-4 text-dark">System Settings</h3>
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-8">
+                            <div class="dash-card flex-column align-items-start">
+                                <h5 class="fw-bold mb-4">Platform Configuration</h5>
+                                <form style="width: 100%;">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Platform Name</label>
+                                        <input type="text" class="form-control" value="STACKLY Asset Management">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Support Email</label>
+                                        <input type="email" class="form-control" value="support@stackly.com">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">Maintenance Mode</label>
+                                        <div class="form-check form-switch fs-5">
+                                            <input class="form-check-input cursor-pointer" type="checkbox" id="maintenanceSwitch">
+                                            <label class="form-check-label fs-6 ms-2 mt-1" for="maintenanceSwitch">Disable user access temporarily</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='dashboard-404.html'">Save Settings</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('show');
+                    mobileOverlay.classList.toggle('show');
+                });
+            }
+
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', function() {
+                    sidebar.classList.remove('show');
+                    mobileOverlay.classList.remove('show');
+                });
+            }
+
+            // Tab Switching Logic
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const tabs = document.querySelectorAll('.dashboard-tab');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active from all links and tabs
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab
+                    const targetId = this.getAttribute('data-target');
+                    if (targetId) {
+                        const targetTab = document.getElementById(targetId);
+                        if (targetTab) {
+                            targetTab.classList.add('active');
+                        }
+                    }
+                    
+                    // Close sidebar on mobile after clicking
+                    if (window.innerWidth < 992) {
+                        sidebar.classList.remove('show');
+                        mobileOverlay.classList.remove('show');
+                    }
+                });
+            });
+
+            // Set User Email and Name from localStorage
+            const storedEmail = localStorage.getItem('userEmail');
+            const emailSpan = document.getElementById('navbarUserEmail');
+            const welcomeNav = document.getElementById('welcomeNav');
+            const welcomeHeader = document.getElementById('welcomeHeader');
+            
+            if (storedEmail) {
+                if (emailSpan) emailSpan.textContent = storedEmail;
+                
+                let users = JSON.parse(localStorage.getItem('usersData')) || {};
+                let userName = users[storedEmail];
+                
+                if (userName) {
+                    if (welcomeNav) welcomeNav.textContent = `Welcome back, ${userName}`;
+                    if (welcomeHeader) welcomeHeader.textContent = `Welcome back, ${userName}!`;
+                }
+            }
+        });
+
+        function filterTable(inputElement) {
+            const filter = inputElement.value.toLowerCase();
+            const tableContainer = inputElement.closest('.dash-table-card');
+            if (!tableContainer) return;
+            const table = tableContainer.querySelector('.table.dash-table');
+            if (!table) return;
+            
+            const tbody = table.getElementsByTagName('tbody')[0];
+            if (!tbody) return;
+            const rows = tbody.getElementsByTagName('tr');
+            
+            for (let i = 0; i < rows.length; i++) {
+                let rowText = rows[i].textContent || rows[i].innerText;
+                if (rowText.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* About Page Specific Styles */
+
+.about-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75); /* Dark blueish overlay to match the image */
+}
+
+.timeline-line {
+    background-color: var(--glass-border);
+}
+
+.timeline-dot {
+    transition: var(--transition-smooth);
+}
+
+.timeline-dot:hover {
+    transform: scale(1.5);
+}
+
+#webgl-container-about {
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px !important;
+        transform: none !important;
+    }
+    
+    .timeline-dot {
+        margin-left: 10px !important;
+    }
+    
+    .vertical-timeline .row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    
+    .vertical-timeline .col-md-5 {
+        text-align: left !important;
+        padding-left: 60px !important;
+        margin-top: -35px !important;
+    }
+}

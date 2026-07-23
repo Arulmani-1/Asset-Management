@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal | STACKLY</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/loader.js"></script>
+</head>
+<body>
+    <div class="login-overlay"></div>
+    
+    <div class="login-wrapper min-vh-100 d-flex flex-column align-items-center justify-content-center p-3">
+        <div class="container z-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7 col-sm-9 col-12" style="max-width: 450px;">
+                    <div class="login-card w-100">
+                        <div class="text-center mb-4">
+                            <img src="assets/images/logo.webp" alt="Stackly" class="mb-4" style="height: 22px;">
+                            <h4 class="fw-bold text-white mb-2" style="font-size: 1.4rem;">Client Portal</h4>
+                            <p class="text-white-50 small mb-0">Sign in to track your project progress</p>
+                        </div>
+                        
+                        <form id="loginForm">
+                            <!-- Select Role -->
+                            <div class="login-input-group">
+                                <select id="roleSelect" class="form-control login-input text-white-50" required>
+                                    <option value="">Select Role</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down login-input-icon"></i>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="login-input-group">
+                                <input type="email" id="emailInput" class="form-control login-input" placeholder="Email Address" required>
+                                <i class="fa-regular fa-envelope login-input-icon"></i>
+                            </div>
+                            
+                            <!-- Password -->
+                            <div class="login-input-group">
+                                <input type="password" class="form-control login-input" placeholder="Password" required>
+                                <i class="fa-regular fa-eye-slash login-input-icon"></i>
+                            </div>
+                            
+                            <!-- Remember & Forgot -->
+                            <div class="d-flex justify-content-between align-items-center mb-4 mt-2 px-1">
+                                <div class="form-check d-flex align-items-center m-0 p-0 gap-2">
+                                    <input class="form-check-input m-0" type="checkbox" id="rememberMe" style="width: 14px; height: 14px; cursor: pointer;">
+                                    <label class="form-check-label text-white-50" for="rememberMe" style="font-size: 0.8rem; cursor: pointer;">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <a href="404.html" class="text-gold text-decoration-none" style="font-size: 0.8rem;">Forgot Password?</a>
+                            </div>
+                            
+                            <button class="btn-gold w-100 py-3 mb-4" type="submit">Sign In</button>
+                            
+                            <div class="text-center mb-3">
+                                <p class="text-white-50 small mb-0">Don't have an account? <a href="signup.html" class="text-gold text-decoration-none fw-semibold">Sign Up</a></p>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="index.html" class="btn-home"><i class="fa-solid fa-house me-2" style="font-size: 0.8rem;"></i> Go to Home</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/three.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent page reload
+                    
+                    const role = document.getElementById('roleSelect').value;
+                    const email = document.getElementById('emailInput').value;
+                    if (email) {
+                        localStorage.setItem('userEmail', email);
+                    }
+                    
+                    if (role === 'admin') {
+                        window.location.href = 'admin-dashboard.html';
+                    } else if (role === 'user') {
+                        window.location.href = 'user-dashboard.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

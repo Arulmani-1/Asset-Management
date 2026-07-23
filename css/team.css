@@ -1,0 +1,79 @@
+/* Team Page Specific Styles */
+
+.team-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75);
+}
+.team-card {
+    cursor: pointer;
+}
+
+.team-img-wrapper {
+    position: relative;
+    border: 1px solid var(--glass-border);
+}
+
+.image-tilt {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.team-card:hover .image-tilt {
+    transform: scale(1.1);
+}
+
+.social-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(11, 18, 32, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.team-card:hover .social-overlay {
+    opacity: 1;
+}
+
+.social-overlay .btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s;
+}
+
+.team-card:hover .social-overlay .btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.team-card:hover .social-overlay .btn:nth-child(1) { transition-delay: 0.1s; }
+.team-card:hover .social-overlay .btn:nth-child(2) { transition-delay: 0.15s; }
+.team-card:hover .social-overlay .btn:nth-child(3) { transition-delay: 0.2s; }
+
+.modal-content {
+    background-color: var(--primary);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Work Showcase Specifics */
+.showcase-title {
+    font-size: 3.5rem;
+}
+.showcase-heading {
+    font-size: 2.2rem;
+}

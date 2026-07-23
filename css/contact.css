@@ -1,0 +1,95 @@
+/* Contact Page Specific Styles */
+
+.contact-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75);
+}
+.contact-form .form-floating {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control, 
+.contact-form .form-select {
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.contact-form .form-control:focus, 
+.contact-form .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+.contact-form .form-floating label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form .form-control:focus ~ label,
+.contact-form .form-control:not(:placeholder-shown) ~ label,
+.contact-form .form-select ~ label {
+    color: var(--accent);
+}
+
+.contact-form .form-select option {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+/* Simulated Map */
+.map-placeholder {
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.map-grid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+    animation: pan-grid 20s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes pan-grid {
+    0% { background-position: 0 0; }
+    100% { background-position: -40px -40px; }
+}
+
+.map-pulse {
+    width: 20px; height: 20px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.map-pulse::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background-color: var(--accent);
+    border-radius: 50%;
+    animation: radar-pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes radar-pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | STACKLY</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/loader.js"></script>
+</head>
+<body>
+    <div class="bg-mesh pulse-anim"></div>
+    <div class="noise-overlay"></div>
+    
+    <div id="navbar-placeholder"></div>
+    
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="contact-hero text-center position-relative d-flex align-items-center justify-content-center">
+            <div class="hero-overlay"></div>
+            <div class="container z-1" data-aos="zoom-in" data-aos-duration="1500">
+                <h1 class="display-3 fw-bold text-white mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">Contact Us</h1>
+                <p class="lead text-white-75 mx-auto fs-5" style="max-width: 800px; letter-spacing: 0.5px;">
+                    Get in touch with our experts to discuss your enterprise wealth management needs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Form Layout Section -->
+        <section class="pb-5 pt-5 position-relative z-1">
+            <div class="container">
+                <div class="row g-5 justify-content-center">
+                    
+                    <!-- Form Card (Top) -->
+                    <div class="col-lg-8 mb-5" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                        <div class="glass-card p-5 p-md-5 animated-border" style="border-radius: 20px;">
+
+                            
+                            <form id="contactForm" action="404.html" class="needs-validation contact-form" novalidate>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control bg-transparent" id="firstName" placeholder="First Name" required style="border-radius: 8px;">
+                                            <label for="firstName">First Name</label>
+                                            <div class="invalid-feedback text-gold">Please provide your first name.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control bg-transparent" id="lastName" placeholder="Last Name" required style="border-radius: 8px;">
+                                            <label for="lastName">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control bg-transparent" id="email" placeholder="Corporate Email" required style="border-radius: 8px;">
+                                            <label for="email">Corporate Email</label>
+                                            <div class="invalid-feedback text-gold">Please provide a valid corporate email.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <select class="form-select bg-transparent text-white" id="inquiryType" required style="border-radius: 8px;">
+                                                <option value="" selected disabled>Select subject...</option>
+                                                <option value="portfolio">Portfolio Management</option>
+                                                <option value="family-office">Family Office Advisory</option>
+                                                <option value="corporate">Corporate Treasury</option>
+                                                <option value="other">Other Inquiry</option>
+                                            </select>
+                                            <label for="inquiryType">Subject of Inquiry</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control bg-transparent" placeholder="Leave a message here" id="message" style="height: 150px; border-radius: 8px;" required></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center mt-5">
+                                        <button class="btn-primary-gradient w-100 w-md-50 magnetic-btn btn-ripple p-3 fs-5" type="submit" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(34, 211, 238, 0.2);">
+                                            Submit Inquiry <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Details & Map Card (Bottom) -->
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                        <div class="glass-card p-0 d-flex flex-column hover-glow animated-border overflow-hidden" style="border-radius: 20px;">
+                            <!-- Google Map -->
+                            <div class="position-relative w-100" style="height: 450px;">
+                                <!-- Mobile Map Overlay to open in new tab -->
+                                <a href="https://maps.google.com/maps?q=MMR%20Complex,%20Periyakollappatty,%20Chinna%20Thirupathi,%20Salem,%20Tamil%20Nadu%20636008,%20India" target="_blank" class="d-md-none position-absolute top-0 start-0 w-100 h-100" style="z-index: 5;"></a>
+                                <iframe 
+                                    src="https://maps.google.com/maps?q=MMR%20Complex,%20Periyakollappatty,%20Chinna%20Thirupathi,%20Salem,%20Tamil%20Nadu%20636008,%20India&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                                <!-- Fade overlay to blend map smoothly into the content below -->
+                                <div class="position-absolute bottom-0 start-0 w-100" style="height: 100px; background: linear-gradient(to bottom, transparent, rgba(11, 17, 26, 1)); pointer-events: none;"></div>
+                            </div>
+
+                            <!-- Office Details -->
+                            <div class="p-5 position-relative" style="background: rgba(11, 17, 26, 1); margin-top: -20px; z-index: 2;">
+                                <div class="row g-4 text-center text-md-start">
+                                    <div class="col-md-3">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: rgba(59, 130, 246, 0.1);">
+                                            <i class="fa-solid fa-location-dot text-accent fs-5"></i>
+                                        </div>
+                                        <h6 class="fw-bold text-white mb-2 text-uppercase tracking-wider">Headquarters</h6>
+                                        <p class="text-white-50 small mb-0 lh-lg">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem<br>Tamil Nadu 636008, India</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: rgba(234, 179, 8, 0.1);">
+                                            <i class="fa-regular fa-clock text-gold fs-5"></i>
+                                        </div>
+                                        <h6 class="fw-bold text-white mb-2 text-uppercase tracking-wider">Trading Hours</h6>
+                                        <p class="text-white-50 small mb-0 lh-lg">Mon-Fri: 24 Hours (Global)<br>Advisory: 8am - 6pm EST</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: rgba(34, 197, 94, 0.1);">
+                                            <i class="fa-solid fa-phone text-success fs-5"></i>
+                                        </div>
+                                        <h6 class="fw-bold text-white mb-2 text-uppercase tracking-wider">Direct Line</h6>
+                                        <p class="text-white-50 small mb-0 lh-lg">+1 (800) 555-0199<br>Available 24/7 for VIPs</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: rgba(6, 182, 212, 0.1);">
+                                            <i class="fa-regular fa-envelope text-info fs-5"></i>
+                                        </div>
+                                        <h6 class="fw-bold text-white mb-2 text-uppercase tracking-wider">Email</h6>
+                                        <p class="text-white-50 small mb-0 lh-lg">elite@stackly.com<br>support@stackly.com</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Social Media -->
+                                <div class="d-flex justify-content-center gap-4 mt-5 pt-4 border-top border-light border-opacity-10">
+                                    <a href="404.html" class="text-white-50 hover-text-accent fs-5 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="404.html" class="text-white-50 hover-text-accent fs-5 transition-all"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="404.html" class="text-white-50 hover-text-accent fs-5 transition-all"><i class="fa-brands fa-bloomberg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

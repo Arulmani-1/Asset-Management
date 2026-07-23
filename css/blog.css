@@ -1,0 +1,49 @@
+/* Blog Page Specific Styles */
+
+.blog-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75);
+}
+.hover-text-accent {
+    transition: var(--transition-fast);
+}
+
+.hover-text-accent:hover {
+    color: var(--accent) !important;
+}
+
+.search-box input:focus {
+    background: transparent;
+    color: var(--white);
+    outline: none;
+    box-shadow: none;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.border-accent {
+    border-color: var(--accent) !important;
+}

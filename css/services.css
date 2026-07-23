@@ -1,0 +1,45 @@
+/* Services Page Specific Styles */
+
+.services-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75);
+}
+.icon-3d-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 
+        inset 0 0 20px rgba(255,255,255,0.05),
+        0 10px 20px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+}
+
+.service-detail-card:hover .icon-3d-wrapper {
+    transform: translateZ(20px) rotateY(15deg);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-detail-card .btn-glass {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-detail-card:hover .btn-glass {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,47 @@
+/* Shared Pages CSS (FAQ, Pricing, Careers, 404) */
+
+.careers-hero, .faq-hero, .pricing-hero {
+    background: url('../assets/images/background.webp') center center / cover no-repeat;
+    min-height: 400px;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 20, 36, 0.75);
+}
+.custom-accordion .accordion-button {
+    padding: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--accent) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button::after {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    transition: var(--transition-smooth);
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    filter: invert(0.6) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+.custom-accordion .accordion-body {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Pricing specific */
+@media (max-width: 991px) {
+    .glass-card[style*="scale(1.05)"] {
+        transform: scale(1) !important;
+    }
+}

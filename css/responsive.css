@@ -1,0 +1,153 @@
+/* Responsive Overrides */
+@media (max-width: 1400px) {
+    /* Ultra Wide adjustments if necessary, mostly handled by Bootstrap container */
+}
+
+@media (max-width: 1200px) {
+    /* Large Desktop & Laptop */
+    .hero-title {
+        font-size: 5.5vw !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Tablet */
+    .hero-title {
+        font-size: 4.5rem !important;
+    }
+    
+    .glass-card {
+        padding: 24px;
+    }
+
+    /* Navbar Collapse Styling for Mobile */
+    .navbar-collapse {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 76px);
+        background: rgba(11, 18, 32, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 2rem 1.5rem;
+        transition: transform 0.3s ease;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .navbar-nav {
+        margin-bottom: 2rem !important;
+    }
+    
+    .navbar-collapse .d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    
+    .navbar-collapse .d-flex .btn-primary-gradient {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    /* Hero Image adjustments for Mobile to prevent cropping */
+    #hero-img-col {
+        min-height: 80vh !important;
+        background-position: top center !important;
+        margin-top: 76px; /* Push below the fixed navbar */
+    }
+    
+    /* Adjust annotations size for mobile so they fit nicely */
+    #hero-img-col span {
+        font-size: 0.65rem !important;
+        max-width: 80px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile */
+    .hero-title {
+        font-size: 3rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .stats-massive .display-2 {
+        font-size: 3rem !important;
+    }
+    
+    /* Disable some hover effects on touch devices for better performance */
+    .hover-tilt:hover {
+        transform: none;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cursor-glow, .cursor-dot {
+        display: none !important;
+    }
+    
+    /* Make How We Work cards equal height on mobile */
+    .timeline-panel {
+        align-items: stretch !important;
+    }
+    .timeline-panel .glass-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Asset Lifecycle Responsive */
+    .al-title {
+        font-size: 2.5rem !important;
+    }
+    .al-stat-num {
+        font-size: 2rem !important;
+    }
+    
+    /* Work Showcase Responsive */
+    .showcase-title {
+        font-size: 2.5rem !important;
+    }
+    .showcase-heading {
+        font-size: 1.8rem !important;
+    }
+    
+    /* CTA title */
+    .cta-title {
+        font-size: 2.3rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Small Mobile */
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .display-1 { font-size: 3rem !important; }
+    .display-2 { font-size: 2.5rem !important; }
+    .display-3 { font-size: 2rem !important; }
+    .display-4 { font-size: 1.8rem !important; }
+    
+    .al-title {
+        font-size: 2rem !important;
+    }
+    .al-stat-num {
+        font-size: 1.5rem !important;
+    }
+    
+    .showcase-title {
+        font-size: 2rem !important;
+    }
+    .showcase-heading {
+        font-size: 1.5rem !important;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem !important;
+    }
+}
