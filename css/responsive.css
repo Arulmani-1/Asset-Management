@@ -120,6 +120,21 @@
     .cta-title {
         font-size: 2.3rem !important;
     }
+    
+    /* 404 Page Responsive */
+    .error-code {
+        font-size: 8rem !important;
+        letter-spacing: -2px !important;
+    }
+    .error-title {
+        font-size: 2.2rem !important;
+    }
+    .error-description {
+        font-size: 1rem !important;
+    }
+    .btn-group-custom {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 576px) {
@@ -148,6 +163,14 @@
     }
     
     .cta-title {
+        font-size: 1.8rem !important;
+    }
+
+    /* 404 Page Responsive Small Mobile */
+    .error-code {
+        font-size: 6rem !important;
+    }
+    .error-title {
         font-size: 1.8rem !important;
     }
 }
