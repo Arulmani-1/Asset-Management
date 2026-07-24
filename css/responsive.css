@@ -22,11 +22,11 @@
 
     /* Navbar Collapse Styling for Mobile */
     .navbar-collapse {
-        position: fixed;
-        top: 76px;
+        position: absolute;
+        top: 100%;
         left: 0;
-        width: 100vw;
-        height: calc(100vh - 76px);
+        width: 100%;
+        max-height: calc(100vh - 76px);
         background: rgba(11, 18, 32, 0.95);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -35,6 +35,7 @@
         padding: 2rem 1.5rem;
         transition: transform 0.3s ease;
         border-top: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
     .navbar-nav {

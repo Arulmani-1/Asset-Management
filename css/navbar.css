@@ -116,17 +116,18 @@
 /* Mobile View Full Screen Navbar */
 @media (max-width: 991px) {
     .navbar-collapse {
-        position: fixed;
-        top: 70px; /* Just below the navbar header */
+        position: absolute;
+        top: 100%;
         left: 0;
-        width: 100vw;
-        height: calc(100vh - 70px);
+        width: 100%;
+        max-height: calc(100vh - 70px);
         background: rgba(11, 18, 32, 0.98); /* Solid dark slate blue matching theme */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         padding: 2rem;
         overflow-y: auto;
         z-index: 1001;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
     /* Make the navbar background completely solid when menu is open on mobile */
